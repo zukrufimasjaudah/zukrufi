@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3# -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <title>Untitled2 - Jupyter Notebook</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./tugasPD1(pengertian)_files/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="./tugasPD1(pengertian)_files/jquery.typeahead.min.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+
+
+<script type="text/javascript" src="./tugasPD1(pengertian)_files/MathJax.js.download" charset="utf-8"></script>
+
+<script type="text/javascript">
+// MathJax disabled, set as null to distinguish from *missing* MathJax,
+// where it will be undefined, and should prompt a dialog later.
+window.mathjax_url = "/static/components/MathJax/MathJax.js";
+</script>
+
+<link rel="stylesheet" href="./tugasPD1(pengertian)_files/bootstrap-tour.min.css" type="text/css">
+<link rel="stylesheet" href="./tugasPD1(pengertian)_files/codemirror.css">
+
+
+    <link rel="stylesheet" href="./tugasPD1(pengertian)_files/style.min.css" type="text/css">
+    
+
+<link rel="stylesheet" href="./tugasPD1(pengertian)_files/override.css" type="text/css">
+<link rel="stylesheet" href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3" id="kernel-css" type="text/css">
+
+
+    <link rel="stylesheet" href="./tugasPD1(pengertian)_files/custom.css" type="text/css">
+    <script src="./tugasPD1(pengertian)_files/promise.min.js.download" type="text/javascript" charset="utf-8"></script>
+    <script src="./tugasPD1(pengertian)_files/react.production.min.js.download" type="text/javascript"></script>
+    <script src="./tugasPD1(pengertian)_files/react-dom.production.min.js.download" type="text/javascript"></script>
+    <script src="./tugasPD1(pengertian)_files/index.js.download" type="text/javascript"></script>
+    <script src="./tugasPD1(pengertian)_files/require.js.download" type="text/javascript" charset="utf-8"></script>
+    <script>
+      require.config({
+          
+          urlArgs: "v=20190904121841",
+          
+          baseUrl: '/static/',
+          paths: {
+            'auth/js/main': 'auth/js/main.min',
+            custom : '/custom',
+            nbextensions : '/nbextensions',
+            kernelspecs : '/kernelspecs',
+            underscore : 'components/underscore/underscore-min',
+            backbone : 'components/backbone/backbone-min',
+            jed: 'components/jed/jed',
+            jquery: 'components/jquery/jquery.min',
+            json: 'components/requirejs-plugins/src/json',
+            text: 'components/requirejs-text/text',
+            bootstrap: 'components/bootstrap/dist/js/bootstrap.min',
+            bootstraptour: 'components/bootstrap-tour/build/js/bootstrap-tour.min',
+            'jquery-ui': 'components/jquery-ui/jquery-ui.min',
+            moment: 'components/moment/min/moment-with-locales',
+            codemirror: 'components/codemirror',
+            termjs: 'components/xterm.js/xterm',
+            typeahead: 'components/jquery-typeahead/dist/jquery.typeahead.min',
+          },
+          map: { // for backward compatibility
+              "*": {
+                  "jqueryui": "jquery-ui",
+              }
+          },
+          shim: {
+            typeahead: {
+              deps: ["jquery"],
+              exports: "typeahead"
+            },
+            underscore: {
+              exports: '_'
+            },
+            backbone: {
+              deps: ["underscore", "jquery"],
+              exports: "Backbone"
+            },
+            bootstrap: {
+              deps: ["jquery"],
+              exports: "bootstrap"
+            },
+            bootstraptour: {
+              deps: ["bootstrap"],
+              exports: "Tour"
+            },
+            "jquery-ui": {
+              deps: ["jquery"],
+              exports: "$"
+            }
+          },
+          waitSeconds: 30,
+      });
+
+      require.config({
+          map: {
+              '*':{
+                'contents': 'services/contents',
+              }
+          }
+      });
+
+      // error-catching custom.js shim.
+      define("custom", function (require, exports, module) {
+          try {
+              var custom = require('custom/custom');
+              console.debug('loaded custom.js');
+              return custom;
+          } catch (e) {
+              console.error("error loading custom.js", e);
+              return {};
+          }
+      })
+
+    document.nbjs_translations = {"domain": "nbjs", "locale_data": {"nbjs": {"": {"domain": "nbjs"}}}};
+    document.documentElement.lang = navigator.language.toLowerCase();
+    </script>
+
+    
+    
+
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="services/contents" src="./tugasPD1(pengertian)_files/contents.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="custom/custom" src="./tugasPD1(pengertian)_files/custom.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="nbextensions/widgets/notebook/js/extension" src="./tugasPD1(pengertian)_files/extension.js.download"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">div.MathJax_MathML {text-align: center; margin: .75em 0px; display: block!important}
+.MathJax_MathML {font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+span.MathJax_MathML {display: inline!important}
+.MathJax_mmlExBox {display: block!important; overflow: hidden; height: 1px; width: 60ex; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0}
+[class="MJX-tex-oldstyle"] {font-family: MathJax_Caligraphic, MathJax_Caligraphic-WEB}
+[class="MJX-tex-oldstyle-bold"] {font-family: MathJax_Caligraphic, MathJax_Caligraphic-WEB; font-weight: bold}
+[class="MJX-tex-caligraphic"] {font-family: MathJax_Caligraphic, MathJax_Caligraphic-WEB}
+[class="MJX-tex-caligraphic-bold"] {font-family: MathJax_Caligraphic, MathJax_Caligraphic-WEB; font-weight: bold}
+@font-face /*1*/ {font-family: MathJax_Caligraphic-WEB; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf')}
+@font-face /*2*/ {font-family: MathJax_Caligraphic-WEB; font-weight: bold; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Bold.otf')}
+[mathvariant="double-struck"] {font-family: MathJax_AMS, MathJax_AMS-WEB}
+[mathvariant="script"] {font-family: MathJax_Script, MathJax_Script-WEB}
+[mathvariant="fraktur"] {font-family: MathJax_Fraktur, MathJax_Fraktur-WEB}
+[mathvariant="bold-script"] {font-family: MathJax_Script, MathJax_Caligraphic-WEB; font-weight: bold}
+[mathvariant="bold-fraktur"] {font-family: MathJax_Fraktur, MathJax_Fraktur-WEB; font-weight: bold}
+[mathvariant="monospace"] {font-family: monospace}
+[mathvariant="sans-serif"] {font-family: sans-serif}
+[mathvariant="bold-sans-serif"] {font-family: sans-serif; font-weight: bold}
+[mathvariant="sans-serif-italic"] {font-family: sans-serif; font-style: italic}
+[mathvariant="sans-serif-bold-italic"] {font-family: sans-serif; font-style: italic; font-weight: bold}
+@font-face /*3*/ {font-family: MathJax_AMS-WEB; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf')}
+@font-face /*4*/ {font-family: MathJax_Script-WEB; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Script-Regular.otf')}
+@font-face /*5*/ {font-family: MathJax_Fraktur-WEB; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Regular.otf')}
+@font-face /*6*/ {font-family: MathJax_Fraktur-WEB; font-weight: bold; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Bold.otf')}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 0; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none; box-sizing: content-box}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_test {font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.MathJax_test.mjx-test-display {display: table!important}
+.MathJax_test.mjx-test-inline {display: inline!important; margin-right: -1px}
+.MathJax_test.mjx-test-default {display: block!important; clear: both}
+.MathJax_ex_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60ex}
+.MathJax_em_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60em}
+.mjx-test-inline .MathJax_left_box {display: inline-block; width: 0; float: left}
+.mjx-test-inline .MathJax_right_box {display: inline-block; width: 0; float: right}
+.mjx-test-display .MathJax_right_box {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">@font-face {font-family: STIXMathJax_Main-italic; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Main-Italic.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Main-Italic.otf?V=2.7.6') format('opentype')}
+</style><style type="text/css">@font-face {font-family: STIXMathJax_Normal-italic; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Normal-Italic.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Normal-Italic.otf?V=2.7.6') format('opentype')}
+</style><style type="text/css">@font-face {font-family: STIXMathJax_Main; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Main-Regular.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Main-Regular.otf?V=2.7.6') format('opentype')}
+</style><link id="favicon" type="image/x-icon" rel="shortcut icon" href="http://localhost:8888/static/base/images/favicon-notebook.ico"><style type="text/css">@font-face {font-family: STIXMathJax_Monospace; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Monospace-Regular.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Monospace-Regular.otf?V=2.7.6') format('opentype')}
+</style><style type="text/css">@font-face {font-family: STIXMathJax_Latin; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Latin-Regular.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Latin-Regular.otf?V=2.7.6') format('opentype')}
+</style><style type="text/css">@font-face {font-family: STIXMathJax_Alphabets; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Alphabets-Regular.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Alphabets-Regular.otf?V=2.7.6') format('opentype')}
+</style><style type="text/css">@font-face {font-family: STIXMathJax_Marks; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Marks-Regular.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Marks-Regular.otf?V=2.7.6') format('opentype')}
+</style><style type="text/css">@font-face {font-family: STIXMathJax_Arrows; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Arrows-Regular.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Arrows-Regular.otf?V=2.7.6') format('opentype')}
+</style><style type="text/css">@font-face {font-family: STIXMathJax_Operators; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Operators-Regular.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Operators-Regular.otf?V=2.7.6') format('opentype')}
+</style><style type="text/css">@font-face {font-family: STIXMathJax_Size3; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Size3-Regular.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Size3-Regular.otf?V=2.7.6') format('opentype')}
+</style><style type="text/css">@font-face {font-family: STIXMathJax_Size1; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Size1-Regular.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Size1-Regular.otf?V=2.7.6') format('opentype')}
+</style><style type="text/css">@font-face {font-family: STIXMathJax_Symbols; src: url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/woff/STIXMathJax_Symbols-Regular.woff?V=2.7.6') format('woff'), url('http://localhost:8888/static/components/MathJax/fonts/HTML-CSS/STIX-Web/otf/STIXMathJax_Symbols-Regular.otf?V=2.7.6') format('opentype')}
+</style></head>
+
+<body class="notebook_app command_mode" data-jupyter-api-token="ed94a6a62af8f7ca78e28ad379d2012de70a6212d057ad02" data-base-url="/" data-ws-url="" data-notebook-name="Untitled2.ipynb" data-notebook-path="Untitled2.ipynb" dir="ltr"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+
+<noscript>
+    <div id='noscript'>
+      Jupyter Notebook requires JavaScript.<br>
+      Please enable it to proceed. 
+  </div>
+</noscript>
+
+<div id="header" role="navigation" aria-label="Top Menu" style="display: block;">
+  <div id="header-container" class="container">
+  <div id="ipython_notebook" class="nav navbar-brand"><a href="http://localhost:8888/tree?token=ed94a6a62af8f7ca78e28ad379d2012de70a6212d057ad02" title="dashboard">
+      <img src="./tugasPD1(pengertian)_files/logo.png" alt="Jupyter Notebook">
+  </a></div>
+
+  
+
+
+<span id="save_widget" class="save_widget">
+    <span id="notebook_name" class="filename">Untitled2</span>
+    <span class="checkpoint_status" title="Wed, Sep 4, 2019 5:14 PM">Last Checkpoint: 2 hours ago</span>
+    <span class="autosave_status">(autosaved)</span>
+</span>
+
+
+  
+
+<span id="kernel_logo_widget">
+  
+  <img class="current_kernel_logo" alt="Current Kernel Logo" src="./tugasPD1(pengertian)_files/logo-64x64.png" title="Python 3" style="display: inline;">
+  
+</span>
+
+
+  
+  
+  
+  
+
+    <span id="login_widget">
+      
+        <button id="logout" class="btn btn-sm navbar-btn">Logout</button>
+      
+    </span>
+
+  
+
+  
+  
+  </div>
+  <div class="header-bar"></div>
+
+  
+<div id="menubar-container" class="container">
+<div id="menubar">
+    <div id="menus" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <button type="button" class="btn btn-default navbar-btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <i class="fa fa-bars"></i>
+              <span class="navbar-text">Menu</span>
+            </button>
+            <p id="kernel_indicator" class="navbar-text indicator_area">
+              <span class="kernel_indicator_name">Python 3</span>
+              <i id="kernel_indicator_icon" class="kernel_idle_icon" title="Kernel Idle"></i>
+            </p>
+            <i id="readonly-indicator" class="navbar-text" title="This notebook is read-only" style="display: none;">
+                <span class="fa-stack">
+                    <i class="fa fa-save fa-stack-1x"></i>
+                    <i class="fa fa-ban fa-stack-2x text-danger"></i>
+                </span>
+            </i>
+            <i id="modal_indicator" class="navbar-text modal_indicator" title="Command Mode"></i>
+            <span id="notification_area"><div id="notification_kernel" class="notification_widget btn btn-xs navbar-btn undefined info" style="display: none;"><span></span></div><div id="notification_notebook" class="notification_widget btn btn-xs navbar-btn" style="display: none;"><span></span></div><div id="notification_trusted" class="notification_widget btn btn-xs navbar-btn" disabled="disabled" style="cursor: help;"><span title="Javascript enabled for notebook display">Trusted</span></div></span>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="dropdown"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" id="filelink" aria-haspopup="true" aria-controls="file_menu class=" dropdown-toggle"="" data-toggle="dropdown" aria-expanded="false">File</a>
+                    <ul id="file_menu" class="dropdown-menu" role="menu" aria-labelledby="filelink">
+                        <li id="new_notebook" class="dropdown-submenu" role="none">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">New Notebook<span class="sr-only">Toggle Dropdown</span></a>
+                            <ul class="dropdown-menu" id="menu-new-notebook-submenu"><li id="new-notebook-submenu-python3"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Python 3</a></li></ul>
+                        </li>
+                        <li id="open_notebook" role="none" title="Opens a new window with the Dashboard view">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Open...</a></li>
+                        <!-- <hr/> -->
+                        <li class="divider" role="none"></li>
+                        <li id="copy_notebook" role="none" title="Open a copy of this notebook&#39;s contents and start a new kernel">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Make a Copy...</a></li>
+                        <li id="save_notebook_as" role="none" title="Save a copy of the notebook&#39;s contents and start a new kernel">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Save as...</a></li>
+                        <li id="rename_notebook" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Rename...</a></li>
+                        <li id="save_checkpoint" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Save and Checkpoint</a></li>
+                        <!-- <hr/> -->
+                        <li class="divider" role="none"></li>
+                        <li id="restore_checkpoint" class="dropdown-submenu" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Revert to Checkpoint<span class="sr-only">Toggle Dropdown</span></a>
+                          <ul class="dropdown-menu"><li><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Wednesday, September 4, 2019 5:14 PM</a></li></ul>
+                        </li>
+                        <li class="divider" role="none"></li>
+                        <li id="print_preview" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Print Preview</a></li>
+                        <li class="dropdown-submenu" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Download as<span class="sr-only">Toggle Dropdown</span></a>
+                            <ul id="download_menu" class="dropdown-menu">
+                                
+                                <li id="download_asciidoc">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">AsciiDoc (.asciidoc)</a>
+                                </li>
+                                
+                                <li id="download_html">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">HTML (.html)</a>
+                                </li>
+                                
+                                <li id="download_latex">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">LaTeX (.tex)</a>
+                                </li>
+                                
+                                <li id="download_markdown">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Markdown (.md)</a>
+                                </li>
+                                
+                                <li id="download_notebook">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Notebook (.ipynb)</a>
+                                </li>
+                                
+                                <li id="download_pdf">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">PDF via LaTeX (.pdf)</a>
+                                </li>
+                                
+                                <li id="download_rst">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">reST (.rst)</a>
+                                </li>
+                                
+                                <li id="download_script">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Python (.py)</a>
+                                </li>
+                                
+                                <li id="download_slides">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Reveal.js slides (.slides.html)</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu hidden" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Deploy as</a>
+                            <ul id="deploy_menu" class="dropdown-menu"></ul>
+                        </li>
+                        <li class="divider" role="none"></li>
+                        <li id="trust_notebook" role="none" title="Trust the output of this notebook" class="disabled">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Trusted Notebook</a></li>
+                        <li class="divider" role="none"></li>
+                        <li id="close_and_halt" role="none" title="Shutdown this notebook&#39;s kernel, and close this window">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Close and Halt</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" class="dropdown-toggle" id="editlink" data-toggle="dropdown" aria-haspopup="true" aria-controls="edit_menu">Edit</a>
+                    <ul id="edit_menu" class="dropdown-menu" role="menu" aria-labelledby="editlink">
+                        <li id="cut_cell" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Cut Cells</a></li>
+                        <li id="copy_cell" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Copy Cells</a></li>
+                        <li id="paste_cell_above" class="disabled" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem" aria-disabled="true">Paste Cells Above</a></li>
+                        <li id="paste_cell_below" class="disabled" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem" aria-disabled="true">Paste Cells Below</a></li>
+                        <li id="paste_cell_replace" class="disabled" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem" aria-disabled="true">Paste Cells &amp; Replace</a></li>
+                        <li id="delete_cell" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Delete Cells</a></li>
+                        <li id="undelete_cell" class="disabled" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem" aria-disabled="true">Undo Delete Cells</a></li>
+                        <li class="divider" role="none"></li>
+                        <li id="split_cell" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Split Cell</a></li>
+                        <li id="merge_cell_above" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Merge Cell Above</a></li>
+                        <li id="merge_cell_below" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Merge Cell Below</a></li>
+                        <li class="divider" role="none"></li>
+                        <li id="move_cell_up" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Move Cell Up</a></li>
+                        <li id="move_cell_down" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Move Cell Down</a></li>
+                        <li class="divider" role="none"></li>
+                        <li id="edit_nb_metadata" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Edit Notebook Metadata</a></li>
+                        <li class="divider" role="none"></li>
+                        <li id="find_and_replace" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem"> Find and Replace </a></li>
+                        <li class="divider" role="none"></li>
+                        <li id="cut_cell_attachments" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Cut Cell Attachments</a></li>
+                        <li id="copy_cell_attachments" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Copy Cell Attachments</a></li>
+                        <li id="paste_cell_attachments" class="disabled" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem" aria-disabled="true">Paste Cell Attachments</a></li>
+                        <li class="divider" role="none"></li>
+                        <li id="insert_image" class="" role="none"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem" aria-disabled="false">  Insert Image </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" class="dropdown-toggle" id="viewlink" data-toggle="dropdown" aria-haspopup="true" aria-controls="view_menu">View</a>
+                    <ul id="view_menu" class="dropdown-menu" role="menu" aria-labelledby="viewlink">
+                        <li id="toggle_header" role="none" title="Show/Hide the logo and notebook title (above menu bar)">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Toggle Header</a>
+                        </li>
+                        <li id="toggle_toolbar" role="none" title="Show/Hide the action icons (below menu bar)">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Toggle Toolbar</a>
+                        </li>
+                        <li id="toggle_line_numbers" role="none" title="Show/Hide line numbers in cells">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Toggle Line Numbers</a>
+                        </li>
+                        <li id="menu-cell-toolbar" class="dropdown-submenu" role="none">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Cell Toolbar</a>
+                            <ul class="dropdown-menu" id="menu-cell-toolbar-submenu"><li data-name="None"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">None</a></li><li data-name="Edit%20Metadata"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Edit Metadata</a></li><li data-name="Raw%20Cell%20Format"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Raw Cell Format</a></li><li data-name="Slideshow"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Slideshow</a></li><li data-name="Attachments"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Attachments</a></li><li data-name="Tags"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Tags</a></li></ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" class="dropdown-toggle" id="insertlink" data-toggle="dropdown" aria-haspopup="true" aria-controls="insert_menu">Insert</a>
+                    <ul id="insert_menu" class="dropdown-menu" role="menu" aria-labelledby="insertlink">
+                        <li id="insert_cell_above" role="none" title="Insert an empty Code cell above the currently active cell">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Insert Cell Above</a></li>
+                        <li id="insert_cell_below" role="none" title="Insert an empty Code cell below the currently active cell">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="menuitem">Insert Cell Below</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" class="dropdown-toggle" data-toggle="dropdown">Cell</a>
+                    <ul id="cell_menu" class="dropdown-menu">
+                        <li id="run_cell" title="Run this cell, and move cursor to the next one">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Run Cells</a></li>
+                        <li id="run_cell_select_below" title="Run this cell, select below">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Run Cells and Select Below</a></li>
+                        <li id="run_cell_insert_below" title="Run this cell, insert below">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Run Cells and Insert Below</a></li>
+                        <li id="run_all_cells" title="Run all cells in the notebook">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Run All</a></li>
+                        <li id="run_all_cells_above" title="Run all cells above (but not including) this cell">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Run All Above</a></li>
+                        <li id="run_all_cells_below" title="Run this cell and all cells below it">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Run All Below</a></li>
+                        <li class="divider"></li>
+                        <li id="change_cell_type" class="dropdown-submenu" title="All cells in the notebook have a cell type. By default, new cells are created as &#39;Code&#39; cells">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Cell Type</a>
+                            <ul class="dropdown-menu">
+                              <li id="to_code" title="Contents will be sent to the kernel for execution, and output will display in the footer of cell">
+                                  <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Code</a></li>
+                              <li id="to_markdown" title="Contents will be rendered as HTML and serve as explanatory text">
+                                  <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Markdown</a></li>
+                              <li id="to_raw" title="Contents will pass through nbconvert unmodified">
+                                  <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Raw NBConvert</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li id="current_outputs" class="dropdown-submenu"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Current Outputs</a>
+                            <ul class="dropdown-menu">
+                                <li id="toggle_current_output" title="Hide/Show the output of the current cell">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Toggle</a>
+                                </li>
+                                <li id="toggle_current_output_scroll" title="Scroll the output of the current cell">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Toggle Scrolling</a>
+                                </li>
+                                <li id="clear_current_output" title="Clear the output of the current cell">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Clear</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="all_outputs" class="dropdown-submenu"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">All Output</a>
+                            <ul class="dropdown-menu">
+                                <li id="toggle_all_output" title="Hide/Show the output of all cells">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Toggle</a>
+                                </li>
+                                <li id="toggle_all_output_scroll" title="Scroll the output of all cells">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Toggle Scrolling</a>
+                                </li>
+                                <li id="clear_all_output" title="Clear the output of all cells">
+                                    <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Clear</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" class="dropdown-toggle" data-toggle="dropdown">Kernel</a>
+                    <ul id="kernel_menu" class="dropdown-menu">
+                        <li id="int_kernel" title="Send Keyboard Interrupt (CTRL-C) to the Kernel">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Interrupt</a>
+                        </li>
+                        <li id="restart_kernel" title="Restart the Kernel">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Restart</a>
+                        </li>
+                        <li id="restart_clear_output" title="Restart the Kernel and clear all output">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Restart &amp; Clear Output</a>
+                        </li>
+                        <li id="restart_run_all" title="Restart the Kernel and re-run the notebook">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Restart &amp; Run All</a>
+                        </li>
+                        <li id="reconnect_kernel" title="Reconnect to the Kernel">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Reconnect</a>
+                        </li>
+                        <li id="shutdown_kernel" title="Shutdown the Kernel">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Shutdown</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li id="menu-change-kernel" class="dropdown-submenu">
+                            <a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Change kernel</a>
+                            <ul class="dropdown-menu" id="menu-change-kernel-submenu"><li id="kernel-submenu-python3"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Python 3</a></li></ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" class="dropdown-toggle" data-toggle="dropdown">Help</a>
+                    <ul id="help_menu" class="dropdown-menu">
+                        
+                        <li id="notebook_tour" title="A quick tour of the notebook user interface"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">User Interface Tour</a></li>
+                        <li id="keyboard_shortcuts" title="Opens a tooltip with all keyboard shortcuts"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Keyboard Shortcuts</a></li>
+                        <li id="edit_keyboard_shortcuts" title="Opens a dialog allowing you to edit Keyboard shortcuts"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">Edit Keyboard Shortcuts</a></li>
+                        <li class="divider"></li>
+                        
+
+						
+                        
+                            
+                                <li><a rel="noreferrer" href="http://nbviewer.jupyter.org/github/ipython/ipython/blob/3.x/examples/Notebook/Index.ipynb" target="_blank" title="Opens in a new window">
+                                
+                                    <i class="fa fa-external-link menu-icon pull-right"></i>
+                                
+
+                                Notebook Help
+                                </a></li>
+                            
+                                <li><a rel="noreferrer" href="https://help.github.com/articles/markdown-basics/" target="_blank" title="Opens in a new window">
+                                
+                                    <i class="fa fa-external-link menu-icon pull-right"></i>
+                                
+
+                                Markdown
+                                </a></li>
+                            
+                            
+                        
+                        <li id="kernel-help-links" class="divider"></li><li><a target="_blank" title="Opens in a new window" href="https://docs.python.org/3.7?v=20190904121841"><i class="fa fa-external-link menu-icon pull-right"></i><span>Python Reference</span></a></li><li><a target="_blank" title="Opens in a new window" href="https://ipython.org/documentation.html?v=20190904121841"><i class="fa fa-external-link menu-icon pull-right"></i><span>IPython Reference</span></a></li><li><a target="_blank" title="Opens in a new window" href="https://docs.scipy.org/doc/numpy/reference/?v=20190904121841"><i class="fa fa-external-link menu-icon pull-right"></i><span>NumPy Reference</span></a></li><li><a target="_blank" title="Opens in a new window" href="https://docs.scipy.org/doc/scipy/reference/?v=20190904121841"><i class="fa fa-external-link menu-icon pull-right"></i><span>SciPy Reference</span></a></li><li><a target="_blank" title="Opens in a new window" href="https://matplotlib.org/contents.html?v=20190904121841"><i class="fa fa-external-link menu-icon pull-right"></i><span>Matplotlib Reference</span></a></li><li><a target="_blank" title="Opens in a new window" href="http://docs.sympy.org/latest/index.html?v=20190904121841"><i class="fa fa-external-link menu-icon pull-right"></i><span>SymPy Reference</span></a></li><li><a target="_blank" title="Opens in a new window" href="https://pandas.pydata.org/pandas-docs/stable/?v=20190904121841"><i class="fa fa-external-link menu-icon pull-right"></i><span>pandas Reference</span></a></li><li class="divider"></li>
+                        <li title="About Jupyter Notebook"><a id="notebook_about" href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#">About</a></li>
+                        
+                    </ul>
+                </li>
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="maintoolbar" class="navbar">
+  <div class="toolbar-inner navbar-inner navbar-nobg">
+    <div id="maintoolbar-container" class="container toolbar"><div class="btn-group" id="save-notbook"><button class="btn btn-default" title="Save and Checkpoint" data-jupyter-action="jupyter-notebook:save-notebook"><i class="fa-save fa"></i></button></div><div class="btn-group" id="insert_above_below"><button class="btn btn-default" title="insert cell below" data-jupyter-action="jupyter-notebook:insert-cell-below"><i class="fa-plus fa"></i></button></div><div class="btn-group" id="cut_copy_paste"><button class="btn btn-default" title="cut selected cells" data-jupyter-action="jupyter-notebook:cut-cell"><i class="fa-cut fa"></i></button><button class="btn btn-default" title="copy selected cells" data-jupyter-action="jupyter-notebook:copy-cell"><i class="fa-copy fa"></i></button><button class="btn btn-default" title="paste cells below" data-jupyter-action="jupyter-notebook:paste-cell-below"><i class="fa-paste fa"></i></button></div><div class="btn-group" id="move_up_down"><button class="btn btn-default" title="move selected cells up" data-jupyter-action="jupyter-notebook:move-cell-up"><i class="fa-arrow-up fa"></i></button><button class="btn btn-default" title="move selected cells down" data-jupyter-action="jupyter-notebook:move-cell-down"><i class="fa-arrow-down fa"></i></button></div><div class="btn-group" id="run_int"><button class="btn btn-default" title="Run" data-jupyter-action="jupyter-notebook:run-cell-and-select-next"><i class="fa-step-forward fa"></i><span class="toolbar-btn-label">Run</span></button><button class="btn btn-default" title="interrupt the kernel" data-jupyter-action="jupyter-notebook:interrupt-kernel"><i class="fa-stop fa"></i></button><button class="btn btn-default" title="restart the kernel (with dialog)" data-jupyter-action="jupyter-notebook:confirm-restart-kernel"><i class="fa-repeat fa"></i></button><button class="btn btn-default" title="restart the kernel, then re-run the whole notebook (with dialog)" data-jupyter-action="jupyter-notebook:confirm-restart-kernel-and-run-all-cells"><i class="fa-forward fa"></i></button></div><select id="cell_type" aria-label="combobox, select cell type" role="combobox" class="form-control select-xs"><option value="code">Code</option><option value="markdown">Markdown</option><option value="raw">Raw NBConvert</option><option value="heading">Heading</option><option value="multiselect" disabled="disabled" style="display: none;">-</option></select><div class="btn-group" id="cmd_palette"><button class="btn btn-default" title="open the command palette" data-jupyter-action="jupyter-notebook:show-command-palette"><i class="fa-keyboard-o fa"></i></button></div></div>
+  </div>
+</div>
+</div>
+
+<div class="lower-header-bar"></div>
+
+</div>
+
+<div id="site" style="display: block; height: 587.278px;">
+
+
+<div id="ipython-main-app">
+    <div id="notebook_panel">
+        <div id="notebook" tabindex="-1"><div class="container" id="notebook-container"><div class="cell text_cell unrendered selected" tabindex="2"><div class="prompt input_prompt"></div><div class="inner_cell"><div class="ctb_hideshow"><div class="celltoolbar"></div></div><div class="input_area" aria-label="Edit Markup Text here"><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 922.257px; left: 13.2813px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; padding-right: 0px; padding-bottom: 0px; margin-bottom: -16px; border-right-width: 14px; min-height: 944px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 13.2813px; top: 916.667px; height: 16.6667px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Tugas 1 Penambangan data</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-2">1. Rata-rata</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">-&gt; adalah suatu bilangan yang mewakili sekumpulan data,rata-rata juga dapat di artikan setiap bilangan yang bisa dipakai sebagai wakil dari rentetan nilai rata-rata itu, wujudnya berupa satu bilangan saja, namun dengan satu bilangan itu akan dapat tercermin gambaran secara umum mengenai kumpula atau deretan bahan keterangan yang berupa angka atau bilangan itu.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">Rumus Rata-rata:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-delimit cm-delimit-open">$</span><span class="cm-tag">\bar</span><span class="cm-bracket">{</span>X<span class="cm-bracket">}</span>=<span class="cm-tag">\frac</span><span class="cm-bracket">{</span><span class="cm-tag">\sum</span> X<span class="cm-bracket">}{</span>N<span class="cm-bracket">}</span><span class="cm-delimit cm-delimit-close">$</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-2">2. Median</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">-&gt; adalah suatu nilai atau suatu angka yang membagi suatu distribusi data ke dalam dua bagian yang sama besar.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">Rumus :</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-delimit cm-delimit-open">$</span><span class="cm-tag">\left</span> <span class="cm-tag">\{</span> <span class="cm-tag">\frac</span><span class="cm-bracket">{</span>n+1<span class="cm-bracket">}{</span><span class="cm-atom">2</span><span class="cm-bracket">}</span> <span class="cm-tag">\right</span> <span class="cm-tag">\}</span><span class="cm-delimit cm-delimit-close">$</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-2">3. Modus</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-variable-2">-&gt; adalah satu skor atau nilai yang mempunyai frekuensi yang paling banyak dengan kata lain skor atau nilai yang memiliki frekuensi maksimal dalam distribusi data. </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">Rumus: Nilain yang paling banyak muncul</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-2">4. Standard deviasi</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">-&gt; adalah nilai statistik yang digunakan untuk menentukan bagaimana sebaran data dalam sampel, dan seberapa dekat titik data individu ke mean – atau rata-rata – nilai sampel.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">Rumus:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-delimit cm-delimit-open">$</span><span class="cm-tag">\sigma</span> = <span class="cm-tag">\sqrt</span><span class="cm-bracket">{</span><span class="cm-tag">\frac</span><span class="cm-bracket">{</span><span class="cm-atom">1</span><span class="cm-bracket">}{</span>N<span class="cm-bracket">}</span><span class="cm-tag">\sum</span>_<span class="cm-bracket">{</span>i=1<span class="cm-bracket">}</span>^<span class="cm-bracket">{</span>N<span class="cm-bracket">}}</span><span class="cm-tag">\left</span> ( x_<span class="cm-bracket">{</span>i<span class="cm-bracket">}</span> -<span class="cm-tag">\mu</span> <span class="cm-tag">\right</span> )^<span class="cm-bracket">{</span><span class="cm-atom">2</span><span class="cm-bracket">}</span><span class="cm-delimit cm-delimit-close">$</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-2">5. Varian</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">varian adalah ukuran seberapa jauh sebuah kumpulan bilangan tersebar. Varians nol mengindikasikan bahwa semua nilai sama. Varians selalu bernilai non-negatif: varians yang rendah mengindikasikan bahwa titik data condong sangat dekat dengan nilai rerata (nilai ekspektasi) dan antara satu sama lainnya, sementara varians yang tinggi mengindikasikan bahwa titik data sangat tersebar disekitar rerata dan dari satu sama lainnya.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">rumus: </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-delimit cm-delimit-open">$</span>s^<span class="cm-bracket">{</span><span class="cm-atom">2</span><span class="cm-bracket">}</span><span class="cm-tag">\frac</span><span class="cm-bracket">{</span>n<span class="cm-tag">\sum</span>_<span class="cm-bracket">{</span>n<span class="cm-bracket">}</span>^<span class="cm-bracket">{</span>i=1<span class="cm-bracket">}</span>x_<span class="cm-bracket">{</span>i<span class="cm-bracket">}</span>^<span class="cm-bracket">{</span><span class="cm-atom">2</span><span class="cm-bracket">}</span>-<span class="cm-tag">\left</span> ( <span class="cm-tag">\sum</span>_<span class="cm-bracket">{</span>i=1<span class="cm-bracket">}</span>^<span class="cm-bracket">{</span>n<span class="cm-bracket">}</span>x_<span class="cm-bracket">{</span><span class="cm-atom">1</span><span class="cm-bracket">}</span> <span class="cm-tag">\right</span> )^<span class="cm-bracket">{</span><span class="cm-atom">2</span><span class="cm-bracket">}}{</span>n<span class="cm-tag">\left</span> ( n-1 <span class="cm-tag">\right</span> )<span class="cm-bracket">}</span><span class="cm-delimit cm-delimit-close">$</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-2">6. Skewness</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">Skewness adalah derajat ketidaksimetrisan suatu distribusi. Jika kurva frekuensi suatu distribusi memiliki ekor yang lebih memanjang ke kanan (dilihat dari meannya) maka dikatakan menceng kanan (positif) dan jika sebaliknya maka menceng kiri (negatif). Secara perhitungan, skewness adalah momen ketigaterhadap mean</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">rumus:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-delimit cm-delimit-open">$</span><span class="cm-tag">\frac</span><span class="cm-bracket">{</span><span class="cm-tag">\sum</span>_<span class="cm-bracket">{</span>i<span class="cm-bracket">}</span>^<span class="cm-bracket">{</span>N<span class="cm-tag">\left</span> ( X_<span class="cm-bracket">{</span>i<span class="cm-bracket">}</span> -X<span class="cm-tag">\right</span> )^<span class="cm-bracket">{</span><span class="cm-atom">3</span><span class="cm-bracket">}}}{</span><span class="cm-tag">\left</span> ( N-1 <span class="cm-tag">\right</span> )x<span class="cm-tag">\sigma</span> ^<span class="cm-bracket">{</span><span class="cm-atom">3</span><span class="cm-bracket">}}</span><span class="cm-delimit cm-delimit-close">$</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-2">7. Quartil</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">Kuartil adalah bilangan yang digunakan untuk membagi sekumpulan data menjadi empat bagian sama banyak, atau perempat.</span><span class="cm-link cm-variable-2">[1]</span><span class="cm-variable-2"> Kuartil atas/akhir atau disebut juga kuartil ketiga, adalah 25% bilangan teratas dari sekumpulan data, atau bagian ke-75 dari perseratus. Kuartil atas dihitung dengan menentukan median (nilai tengah) dalam setengah bagian atas dari sekumpulan data</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> </span></pre></div></div></div></div></div><div style="position: absolute; height: 14px; width: 1px; border-bottom: 0px solid transparent; top: 944px;"></div><div class="CodeMirror-gutters" style="display: none; height: 958px;"></div></div></div></div><div class="text_cell_render rendered_html" tabindex="-1"><p>Tugas 1 Penambangan data</p>
+<ol>
+<li><p>Rata-rata
+ -&gt; adalah suatu bilangan yang mewakili sekumpulan data,rata-rata juga dapat di artikan setiap bilangan yang bisa dipakai sebagai wakil dari rentetan nilai rata-rata itu, wujudnya berupa satu bilangan saja, namun dengan satu bilangan itu akan dapat tercermin gambaran secara umum mengenai kumpula atau deretan bahan keterangan yang berupa angka atau bilangan itu.</p>
+<p> Rumus Rata-rata:
+ <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-31-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x00AF;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-949" style="width: 4.527em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.753em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.134em, 1003.75em, 2.979em, -999.997em); top: -2.438em; left: 0em;"><span class="mrow" id="MathJax-Span-950"><span class="texatom" id="MathJax-Span-951"><span class="mrow" id="MathJax-Span-952"><span class="munderover" id="MathJax-Span-953"><span style="display: inline-block; position: relative; width: 0.836em; height: 0px;"><span style="position: absolute; clip: rect(3.158em, 1000.84em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-954" style="font-family: STIXMathJax_Normal-italic;">𝑋<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.217em, 1000.3em, 3.634em, -999.997em); top: -4.223em; left: 0.301em;"><span class="mo" id="MathJax-Span-955" style="font-family: STIXMathJax_Main;">¯</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span></span><span class="mo" id="MathJax-Span-956" style="font-family: STIXMathJax_Main; padding-left: 0.301em;">=</span><span class="mfrac" id="MathJax-Span-957" style="padding-left: 0.301em;"><span style="display: inline-block; position: relative; width: 1.491em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.277em, 1001.37em, 4.348em, -999.997em); top: -4.58em; left: 50%; margin-left: -0.711em;"><span class="mrow" id="MathJax-Span-958"><span class="mo" id="MathJax-Span-959" style="font-size: 70.7%; font-family: STIXMathJax_Operators; vertical-align: 0.003em;">∑</span><span class="mi" id="MathJax-Span-960" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic; padding-left: 0.241em;">𝑋<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.336em, 1000.66em, 4.17em, -999.997em); top: -3.628em; left: 50%; margin-left: -0.295em;"><span class="mi" id="MathJax-Span-961" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑁<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1001.49em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.491em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.443em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.496em; border-left: 0px solid; width: 0px; height: 2.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mover><mi>X</mi><mo stretchy="false">¯</mo></mover></mrow><mo>=</mo><mfrac><mrow><mo>∑</mo><mi>X</mi></mrow><mi>N</mi></mfrac></math></span></span><script type="math/tex" id="MathJax-Element-31">\bar{X}=\frac{\sum X}{N}</script></p>
+</li>
+<li><p>Median
+ -&gt; adalah suatu nilai atau suatu angka yang membagi suatu distribusi data ke dalam dua bagian yang sama besar.</p>
+<p> Rumus :
+ <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-32-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow&gt;&lt;mo&gt;{&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;mo&gt;}&lt;/mo&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-962" style="width: 3.336em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.741em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(2.979em, 1002.62em, 4.705em, -999.997em); top: -4.104em; left: 0em;"><span class="mrow" id="MathJax-Span-963"><span class="mrow" id="MathJax-Span-964"><span class="mo" id="MathJax-Span-965" style="vertical-align: -0.176em;"><span style="font-family: STIXMathJax_Size1;">{</span></span><span class="mfrac" id="MathJax-Span-966"><span style="display: inline-block; position: relative; width: 1.313em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.336em, 1001.13em, 4.17em, -999.997em); top: -4.461em; left: 50%; margin-left: -0.592em;"><span class="mrow" id="MathJax-Span-967"><span class="mi" id="MathJax-Span-968" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑛</span><span class="mo" id="MathJax-Span-969" style="font-size: 70.7%; font-family: STIXMathJax_Main;">+</span><span class="mn" id="MathJax-Span-970" style="font-size: 70.7%; font-family: STIXMathJax_Main;">1</span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.336em, 1000.36em, 4.17em, -999.997em); top: -3.568em; left: 50%; margin-left: -0.176em;"><span class="mn" id="MathJax-Span-971" style="font-size: 70.7%; font-family: STIXMathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1001.31em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.313em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span><span class="mo" id="MathJax-Span-972" style="vertical-align: -0.176em;"><span style="font-family: STIXMathJax_Size1;">}</span></span></span></span><span style="display: inline-block; width: 0px; height: 4.11em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.568em; border-left: 0px solid; width: 0px; height: 1.718em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo>{</mo><mfrac><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo>}</mo></mrow></math></span></span><script type="math/tex" id="MathJax-Element-32">\left \{ \frac{n+1}{2} \right \}</script></p>
+</li>
+</ol>
+<ol start="3">
+<li><p>Modus
+-&gt; adalah satu skor atau nilai yang mempunyai frekuensi yang paling banyak dengan kata lain skor atau nilai yang memiliki frekuensi maksimal dalam distribusi data. </p>
+<p> Rumus: Nilain yang paling banyak muncul</p>
+</li>
+<li><p>Standard deviasi</p>
+<p> -&gt; adalah nilai statistik yang digunakan untuk menentukan bagaimana sebaran data dalam sampel, dan seberapa dekat titik data individu ke mean – atau rata-rata – nilai sampel.</p>
+<p> Rumus:
+ <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-33-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03C3;&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msqrt&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mfrac&gt;&lt;munderover&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;/munderover&gt;&lt;/msqrt&gt;&lt;msup&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;&amp;#x03BC;&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-973" style="width: 11.67em; display: inline-block;"><span style="display: inline-block; position: relative; width: 9.705em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.074em, 1009.71em, 3.277em, -999.997em); top: -2.438em; left: 0em;"><span class="mrow" id="MathJax-Span-974"><span class="mi" id="MathJax-Span-975" style="font-family: STIXMathJax_Normal-italic;">𝜎<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-976" style="font-family: STIXMathJax_Main; padding-left: 0.301em;">=</span><span class="msqrt" id="MathJax-Span-977" style="padding-left: 0.301em;"><span style="display: inline-block; position: relative; width: 4.289em; height: 0px;"><span style="position: absolute; clip: rect(2.86em, 1003.22em, 4.527em, -999.997em); top: -3.985em; left: 1.074em;"><span class="mrow" id="MathJax-Span-978"><span class="mfrac" id="MathJax-Span-979"><span style="display: inline-block; position: relative; width: 0.777em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.336em, 1000.3em, 4.17em, -999.997em); top: -4.402em; left: 50%; margin-left: -0.176em;"><span class="mn" id="MathJax-Span-980" style="font-size: 70.7%; font-family: STIXMathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.336em, 1000.66em, 4.17em, -999.997em); top: -3.628em; left: 50%; margin-left: -0.295em;"><span class="mi" id="MathJax-Span-981" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑁<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1000.78em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 0.777em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span><span class="munderover" id="MathJax-Span-982" style="padding-left: 0.182em;"><span style="display: inline-block; position: relative; width: 2.027em; height: 0px;"><span style="position: absolute; clip: rect(3.039em, 1000.84em, 4.408em, -999.997em); top: -3.985em; left: 0em;"><span class="mo" id="MathJax-Span-983" style="font-family: STIXMathJax_Operators; vertical-align: 0.003em;">∑</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.336em, 1000.72em, 4.17em, -999.997em); top: -4.461em; left: 0.896em;"><span class="texatom" id="MathJax-Span-984"><span class="mrow" id="MathJax-Span-985"><span class="mi" id="MathJax-Span-986" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑁<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.336em, 1001.13em, 4.17em, -999.997em); top: -3.688em; left: 0.896em;"><span class="texatom" id="MathJax-Span-987"><span class="mrow" id="MathJax-Span-988"><span class="mi" id="MathJax-Span-989" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑖</span><span class="mo" id="MathJax-Span-990" style="font-size: 70.7%; font-family: STIXMathJax_Main;">=</span><span class="mn" id="MathJax-Span-991" style="font-size: 70.7%; font-family: STIXMathJax_Main;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.515em, 1003.28em, 3.932em, -999.997em); top: -4.878em; left: 1.074em;"><span style="display: inline-block; position: relative; width: 3.277em; height: 0px;"><span style="position: absolute; font-family: STIXMathJax_Symbols; top: -3.985em; left: 0em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; font-family: STIXMathJax_Symbols; top: -3.985em; left: 2.92em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: STIXMathJax_Symbols; position: absolute; top: -3.985em; left: 0.241em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: STIXMathJax_Symbols; position: absolute; top: -3.985em; left: 0.539em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: STIXMathJax_Symbols; position: absolute; top: -3.985em; left: 0.777em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: STIXMathJax_Symbols; position: absolute; top: -3.985em; left: 1.074em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: STIXMathJax_Symbols; position: absolute; top: -3.985em; left: 1.313em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: STIXMathJax_Symbols; position: absolute; top: -3.985em; left: 1.61em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: STIXMathJax_Symbols; position: absolute; top: -3.985em; left: 1.848em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: STIXMathJax_Symbols; position: absolute; top: -3.985em; left: 2.146em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: STIXMathJax_Symbols; position: absolute; top: -3.985em; left: 2.384em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="font-family: STIXMathJax_Symbols; position: absolute; top: -3.985em; left: 2.682em;">⎯<span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(2.265em, 1001.07em, 4.467em, -999.997em); top: -3.628em; left: 0em;"><span style="font-family: STIXMathJax_Size1;">√</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-992"><span style="display: inline-block; position: relative; width: 3.693em; height: 0px;"><span style="position: absolute; clip: rect(3.158em, 1003.22em, 4.348em, -999.997em); top: -3.985em; left: 0em;"><span class="mrow" id="MathJax-Span-993"><span class="mo" id="MathJax-Span-994" style="vertical-align: 0em;"><span style="font-family: STIXMathJax_Main;">(</span></span><span class="msubsup" id="MathJax-Span-995"><span style="display: inline-block; position: relative; width: 0.836em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.54em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-996" style="font-family: STIXMathJax_Normal-italic;">𝑥</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.807em; left: 0.539em;"><span class="texatom" id="MathJax-Span-997"><span class="mrow" id="MathJax-Span-998"><span class="mi" id="MathJax-Span-999" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑖</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-1000" style="font-family: STIXMathJax_Main; padding-left: 0.241em;">−</span><span class="mi" id="MathJax-Span-1001" style="font-family: STIXMathJax_Normal-italic; padding-left: 0.241em;">𝜇</span><span class="mo" id="MathJax-Span-1002" style="vertical-align: 0em;"><span style="font-family: STIXMathJax_Main;">)</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.402em; left: 3.277em;"><span class="texatom" id="MathJax-Span-1003"><span class="mrow" id="MathJax-Span-1004"><span class="mn" id="MathJax-Span-1005" style="font-size: 70.7%; font-family: STIXMathJax_Main;">2</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.443em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.854em; border-left: 0px solid; width: 0px; height: 2.361em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>σ</mi><mo>=</mo><msqrt><mfrac><mn>1</mn><mi>N</mi></mfrac><munderover><mo>∑</mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>N</mi></mrow></munderover></msqrt><msup><mrow><mo>(</mo><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>i</mi></mrow></msub><mo>−</mo><mi>μ</mi><mo>)</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msup></math></span></span><script type="math/tex" id="MathJax-Element-33">\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}}\left ( x_{i} -\mu \right )^{2}</script></p>
+</li>
+<li><p>Varian
+ varian adalah ukuran seberapa jauh sebuah kumpulan bilangan tersebar. Varians nol mengindikasikan bahwa semua nilai sama. Varians selalu bernilai non-negatif: varians yang rendah mengindikasikan bahwa titik data condong sangat dekat dengan nilai rerata (nilai ekspektasi) dan antara satu sama lainnya, sementara varians yang tinggi mengindikasikan bahwa titik data sangat tersebar disekitar rerata dan dari satu sama lainnya.</p>
+<p> rumus: 
+ <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-34-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;munderover&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/munderover&gt;&lt;msubsup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msubsup&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;msup&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;munderover&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;/munderover&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1006" style="width: 9.467em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.86em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.539em, 1007.86em, 2.86em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-1007"><span class="msubsup" id="MathJax-Span-1008"><span style="display: inline-block; position: relative; width: 0.896em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.42em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-1009" style="font-family: STIXMathJax_Normal-italic;">𝑠</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.342em; left: 0.42em;"><span class="texatom" id="MathJax-Span-1010"><span class="mrow" id="MathJax-Span-1011"><span class="mn" id="MathJax-Span-1012" style="font-size: 70.7%; font-family: STIXMathJax_Main;">2</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mfrac" id="MathJax-Span-1013"><span style="display: inline-block; position: relative; width: 6.729em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.039em, 1006.61em, 4.408em, -999.997em); top: -4.64em; left: 50%; margin-left: -3.33em;"><span class="mrow" id="MathJax-Span-1014"><span class="mi" id="MathJax-Span-1015" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑛</span><span class="munderover" id="MathJax-Span-1016" style="padding-left: 0.182em;"><span style="display: inline-block; position: relative; width: 1.432em; height: 0px;"><span style="position: absolute; clip: rect(3.277em, 1000.6em, 4.348em, -999.997em); top: -3.985em; left: 0em;"><span class="mo" id="MathJax-Span-1017" style="font-size: 70.7%; font-family: STIXMathJax_Operators; vertical-align: 0.003em;">∑</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.455em, 1000.78em, 4.17em, -999.997em); top: -4.342em; left: 0.658em;"><span class="texatom" id="MathJax-Span-1018"><span class="mrow" id="MathJax-Span-1019"><span class="mi" id="MathJax-Span-1020" style="font-size: 50%; font-family: STIXMathJax_Normal-italic;">𝑖</span><span class="mo" id="MathJax-Span-1021" style="font-size: 50%; font-family: STIXMathJax_Main;">=</span><span class="mn" id="MathJax-Span-1022" style="font-size: 50%; font-family: STIXMathJax_Main;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.574em, 1000.3em, 4.17em, -999.997em); top: -3.747em; left: 0.658em;"><span class="texatom" id="MathJax-Span-1023"><span class="mrow" id="MathJax-Span-1024"><span class="mi" id="MathJax-Span-1025" style="font-size: 50%; font-family: STIXMathJax_Normal-italic;">𝑛</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-1026" style="padding-left: 0.182em;"><span style="display: inline-block; position: relative; width: 0.717em; height: 0px;"><span style="position: absolute; clip: rect(3.515em, 1000.36em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-1027" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑥</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.455em, 1000.3em, 4.17em, -999.997em); top: -4.223em; left: 0.42em;"><span class="texatom" id="MathJax-Span-1028"><span class="mrow" id="MathJax-Span-1029"><span class="mn" id="MathJax-Span-1030" style="font-size: 50%; font-family: STIXMathJax_Main;">2</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.515em, 1000.24em, 4.17em, -999.997em); top: -3.807em; left: 0.42em;"><span class="texatom" id="MathJax-Span-1031"><span class="mrow" id="MathJax-Span-1032"><span class="mi" id="MathJax-Span-1033" style="font-size: 50%; font-family: STIXMathJax_Normal-italic;">𝑖</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-1034" style="font-size: 70.7%; font-family: STIXMathJax_Main;">−</span><span class="msubsup" id="MathJax-Span-1035"><span style="display: inline-block; position: relative; width: 3.277em; height: 0px;"><span style="position: absolute; clip: rect(3.217em, 1002.86em, 4.408em, -999.997em); top: -3.985em; left: 0em;"><span class="mrow" id="MathJax-Span-1036"><span class="mo" id="MathJax-Span-1037" style="vertical-align: -0.116em;"><span><span style="font-size: 70.7%; font-family: STIXMathJax_Size1;">(</span></span></span><span class="munderover" id="MathJax-Span-1038"><span style="display: inline-block; position: relative; width: 1.432em; height: 0px;"><span style="position: absolute; clip: rect(3.277em, 1000.6em, 4.348em, -999.997em); top: -3.985em; left: 0em;"><span class="mo" id="MathJax-Span-1039" style="font-size: 70.7%; font-family: STIXMathJax_Operators; vertical-align: 0.003em;">∑</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.574em, 1000.3em, 4.17em, -999.997em); top: -4.342em; left: 0.658em;"><span class="texatom" id="MathJax-Span-1040"><span class="mrow" id="MathJax-Span-1041"><span class="mi" id="MathJax-Span-1042" style="font-size: 50%; font-family: STIXMathJax_Normal-italic;">𝑛</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.455em, 1000.78em, 4.17em, -999.997em); top: -3.747em; left: 0.658em;"><span class="texatom" id="MathJax-Span-1043"><span class="mrow" id="MathJax-Span-1044"><span class="mi" id="MathJax-Span-1045" style="font-size: 50%; font-family: STIXMathJax_Normal-italic;">𝑖</span><span class="mo" id="MathJax-Span-1046" style="font-size: 50%; font-family: STIXMathJax_Main;">=</span><span class="mn" id="MathJax-Span-1047" style="font-size: 50%; font-family: STIXMathJax_Main;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-1048" style="padding-left: 0.182em;"><span style="display: inline-block; position: relative; width: 0.717em; height: 0px;"><span style="position: absolute; clip: rect(3.515em, 1000.36em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-1049" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑥</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.866em; left: 0.42em;"><span class="texatom" id="MathJax-Span-1050"><span class="mrow" id="MathJax-Span-1051"><span class="mn" id="MathJax-Span-1052" style="font-size: 50%; font-family: STIXMathJax_Main;">1</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-1053" style="vertical-align: -0.116em;"><span><span style="font-size: 70.7%; font-family: STIXMathJax_Size1;">)</span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.402em; left: 2.979em;"><span class="texatom" id="MathJax-Span-1054"><span class="mrow" id="MathJax-Span-1055"><span class="mn" id="MathJax-Span-1056" style="font-size: 50%; font-family: STIXMathJax_Main;">2</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.336em, 1001.97em, 4.289em, -999.997em); top: -3.568em; left: 50%; margin-left: -1.009em;"><span class="mrow" id="MathJax-Span-1057"><span class="mi" id="MathJax-Span-1058" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑛</span><span class="mrow" id="MathJax-Span-1059"><span class="mo" id="MathJax-Span-1060" style="font-size: 70.7%; font-family: STIXMathJax_Main;">(</span><span class="mi" id="MathJax-Span-1061" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑛</span><span class="mo" id="MathJax-Span-1062" style="font-size: 70.7%; font-family: STIXMathJax_Main;">−</span><span class="mn" id="MathJax-Span-1063" style="font-size: 70.7%; font-family: STIXMathJax_Main;">1</span><span class="mo" id="MathJax-Span-1064" style="font-size: 70.7%; font-family: STIXMathJax_Main;">)</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1006.73em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 6.729em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.711em; border-left: 0px solid; width: 0px; height: 2.504em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>s</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msup><mfrac><mrow><mi>n</mi><munderover><mo>∑</mo><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow></munderover><msubsup><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>i</mi></mrow><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msubsup><mo>−</mo><msup><mrow><mo>(</mo><munderover><mo>∑</mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></munderover><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>1</mn></mrow></msub><mo>)</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msup></mrow><mrow><mi>n</mi><mrow><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow></mrow></mfrac></math></span></span><script type="math/tex" id="MathJax-Element-34">s^{2}\frac{n\sum_{n}^{i=1}x_{i}^{2}-\left ( \sum_{i=1}^{n}x_{1} \right )^{2}}{n\left ( n-1 \right )}</script></p>
+</li>
+<li><p>Skewness</p>
+<p> Skewness adalah derajat ketidaksimetrisan suatu distribusi. Jika kurva frekuensi suatu distribusi memiliki ekor yang lebih memanjang ke kanan (dilihat dari meannya) maka dikatakan menceng kanan (positif) dan jika sebaliknya maka menceng kiri (negatif). Secara perhitungan, skewness adalah momen ketigaterhadap mean</p>
+<p> rumus:
+ <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-35-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mfrac&gt;&lt;munderover&gt;&lt;mo&gt;&amp;#x2211;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;msup&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;/munderover&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;&amp;#x03C3;&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1065" style="width: 4.289em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.574em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.36em, 1003.57em, 2.92em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-1066"><span class="mfrac" id="MathJax-Span-1067"><span style="display: inline-block; position: relative; width: 3.336em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(2.801em, 1003.22em, 4.348em, -999.997em); top: -4.58em; left: 50%; margin-left: -1.604em;"><span class="munderover" id="MathJax-Span-1068"><span style="display: inline-block; position: relative; width: 3.217em; height: 0px;"><span style="position: absolute; clip: rect(3.277em, 1000.6em, 4.348em, -999.997em); top: -3.985em; left: 0em;"><span class="mo" id="MathJax-Span-1069" style="font-size: 70.7%; font-family: STIXMathJax_Operators; vertical-align: 0.003em;">∑</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.217em, 1002.62em, 4.348em, -999.997em); top: -4.402em; left: 0.658em;"><span class="texatom" id="MathJax-Span-1070"><span class="mrow" id="MathJax-Span-1071"><span class="mi" id="MathJax-Span-1072" style="font-size: 50%; font-family: STIXMathJax_Normal-italic;">𝑁<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="msubsup" id="MathJax-Span-1073"><span style="display: inline-block; position: relative; width: 2.086em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1001.73em, 4.348em, -999.997em); top: -3.985em; left: 0em;"><span class="mrow" id="MathJax-Span-1074"><span class="mo" id="MathJax-Span-1075" style="vertical-align: -0.116em;"><span><span style="font-size: 50%; font-family: STIXMathJax_Size1;">(</span></span></span><span class="msubsup" id="MathJax-Span-1076"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px;"><span style="position: absolute; clip: rect(3.515em, 1000.42em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-1077" style="font-size: 50%; font-family: STIXMathJax_Normal-italic;">𝑋<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -3.866em; left: 0.42em;"><span class="texatom" id="MathJax-Span-1078"><span class="mrow" id="MathJax-Span-1079"><span class="mi" id="MathJax-Span-1080" style="font-size: 50%; font-family: STIXMathJax_Normal-italic;">𝑖</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span class="mo" id="MathJax-Span-1081" style="font-size: 50%; font-family: STIXMathJax_Main;">−</span><span class="mi" id="MathJax-Span-1082" style="font-size: 50%; font-family: STIXMathJax_Normal-italic;">𝑋<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-1083" style="vertical-align: -0.116em;"><span><span style="font-size: 50%; font-family: STIXMathJax_Size1;">)</span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.223em; left: 1.789em;"><span class="texatom" id="MathJax-Span-1084"><span class="mrow" id="MathJax-Span-1085"><span class="mn" id="MathJax-Span-1086" style="font-size: 50%; font-family: STIXMathJax_Main;">3</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.515em, 1000.24em, 4.17em, -999.997em); top: -3.807em; left: 0.658em;"><span class="texatom" id="MathJax-Span-1087"><span class="mrow" id="MathJax-Span-1088"><span class="mi" id="MathJax-Span-1089" style="font-size: 50%; font-family: STIXMathJax_Normal-italic;">𝑖</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.277em, 1003.1em, 4.289em, -999.997em); top: -3.509em; left: 50%; margin-left: -1.545em;"><span class="mrow" id="MathJax-Span-1090"><span class="mrow" id="MathJax-Span-1091"><span class="mo" id="MathJax-Span-1092" style="font-size: 70.7%; font-family: STIXMathJax_Main;">(</span><span class="mi" id="MathJax-Span-1093" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑁<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.063em;"></span></span><span class="mo" id="MathJax-Span-1094" style="font-size: 70.7%; font-family: STIXMathJax_Main;">−</span><span class="mn" id="MathJax-Span-1095" style="font-size: 70.7%; font-family: STIXMathJax_Main;">1</span><span class="mo" id="MathJax-Span-1096" style="font-size: 70.7%; font-family: STIXMathJax_Main;">)</span></span><span class="mi" id="MathJax-Span-1097" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝑥</span><span class="msubsup" id="MathJax-Span-1098"><span style="display: inline-block; position: relative; width: 0.717em; height: 0px;"><span style="position: absolute; clip: rect(3.515em, 1000.36em, 4.17em, -999.997em); top: -3.985em; left: 0em;"><span class="mi" id="MathJax-Span-1099" style="font-size: 70.7%; font-family: STIXMathJax_Normal-italic;">𝜎<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; top: -4.164em; left: 0.42em;"><span class="texatom" id="MathJax-Span-1100"><span class="mrow" id="MathJax-Span-1101"><span class="mn" id="MathJax-Span-1102" style="font-size: 50%; font-family: STIXMathJax_Main;">3</span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1003.34em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 3.336em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.782em; border-left: 0px solid; width: 0px; height: 2.789em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><munderover><mo>∑</mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi></mrow><mrow class="MJX-TeXAtom-ORD"><mi>N</mi><msup><mrow><mo>(</mo><msub><mi>X</mi><mrow class="MJX-TeXAtom-ORD"><mi>i</mi></mrow></msub><mo>−</mo><mi>X</mi><mo>)</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mn>3</mn></mrow></msup></mrow></munderover><mrow><mrow><mo>(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><mi>x</mi><msup><mi>σ</mi><mrow class="MJX-TeXAtom-ORD"><mn>3</mn></mrow></msup></mrow></mfrac></math></span></span><script type="math/tex" id="MathJax-Element-35">\frac{\sum_{i}^{N\left ( X_{i} -X\right )^{3}}}{\left ( N-1 \right )x\sigma ^{3}}</script></p>
+</li>
+<li><p>Quartil</p>
+<p> Kuartil adalah bilangan yang digunakan untuk membagi sekumpulan data menjadi empat bagian sama banyak, atau perempat.[1] Kuartil atas/akhir atau disebut juga kuartil ketiga, adalah 25% bilangan teratas dari sekumpulan data, atau bagian ke-75 dari perseratus. Kuartil atas dihitung dengan menentukan median (nilai tengah) dalam setengah bagian atas dari sekumpulan data</p>
+<p> rumus: </p>
+</li>
+</ol>
+</div></div></div><div class="cell code_cell rendered unselected" tabindex="2"><div class="input"><div class="prompt_container"><div class="prompt input_prompt"><bdi>In</bdi>&nbsp;[&nbsp;]:</div><div class="run_this_cell" title="Run this cell"><i class="fa-step-forward fa"></i></div></div><div class="inner_cell"><div class="ctb_hideshow"><div class="celltoolbar"></div></div><div class="input_area" aria-label="Edit code here"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5.59027px; left: 5.59027px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; min-width: 8.59027px; margin-bottom: -16px; border-right-width: 14px; min-height: 28px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 5.59027px; top: 0px; height: 16.6667px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 14px; width: 1px; border-bottom: 0px solid transparent; top: 28px;"></div><div class="CodeMirror-gutters" style="display: none; height: 42px;"></div></div></div></div></div></div><div class="output_wrapper"><div class="out_prompt_overlay prompt" title="click to expand output; double click to hide output"></div><div class="output"></div><div class="btn btn-default output_collapsed" title="click to expand output" style="display: none;">. . .</div></div></div><div class="cell code_cell unselected rendered" tabindex="2"><div class="input"><div class="prompt_container"><div class="prompt input_prompt"><bdi>In</bdi>&nbsp;[&nbsp;]:</div><div class="run_this_cell" title="Run this cell"><i class="fa-step-forward fa"></i></div></div><div class="inner_cell"><div class="ctb_hideshow"><div class="celltoolbar"></div></div><div class="input_area" aria-label="Edit code here"><div class="CodeMirror cm-s-ipython"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5.59027px; left: 5.59375px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; min-width: 8.59375px; margin-bottom: -16px; border-right-width: 14px; min-height: 28px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 5.59375px; top: 0px; height: 17px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 14px; width: 1px; border-bottom: 0px solid transparent; top: 28px;"></div><div class="CodeMirror-gutters" style="display: none; height: 42px;"></div></div></div></div></div></div><div class="output_wrapper"><div class="out_prompt_overlay prompt" title="click to expand output; double click to hide output"></div><div class="output"></div><div class="btn btn-default output_collapsed" title="click to expand output" style="display: none;">. . .</div></div></div></div><div class="end_space"></div></div>
+        <div id="tooltip" class="ipython_tooltip" style="display:none"><div class="tooltipbuttons"><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="button" class="ui-button"><span class="ui-icon ui-icon-close">Close</span></a><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="button" class="ui-button" id="expanbutton" title="Grow the tooltip vertically (press shift-tab twice)"><span class="ui-icon ui-icon-plus">Expand</span></a><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="button" class="ui-button" title="show the current docstring in pager (press shift-tab 4 times)"><span class="ui-icon ui-icon-arrowstop-l-n">Open in Pager</span></a><a href="http://localhost:8888/notebooks/Untitled2.ipynb?kernel_name=python3#" role="button" class="ui-button" title="Tooltip will linger for 10 seconds while you type" style="display: none;"><span class="ui-icon ui-icon-clock">Close</span></a></div><div class="pretooltiparrow"></div><div class="tooltiptext smalltooltip"></div></div>
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+<div id="pager" class="ui-resizable">
+    <div id="pager-contents">
+        <div id="pager-container" class="container"></div>
+    </div>
+    <div id="pager-button-area"><a role="button" title="Open the pager in an external window" class="ui-button"><span class="ui-icon ui-icon-extlink"></span></a><a role="button" title="Close the pager" class="ui-button"><span class="ui-icon ui-icon-close"></span></a></div>
+<div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div></div>
+
+
+
+
+
+
+<script type="text/javascript">
+    sys_info = {"notebook_version": "6.0.1", "notebook_path": "c:\\users\\lenovo\\appdata\\local\\programs\\python\\python37-32\\lib\\site-packages\\notebook", "commit_source": "", "commit_hash": "", "sys_version": "3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:06:47) [MSC v.1914 32 bit (Intel)]", "sys_executable": "c:\\users\\lenovo\\appdata\\local\\programs\\python\\python37-32\\python.exe", "sys_platform": "win32", "platform": "Windows-10-10.0.17134-SP0", "os_name": "nt", "default_encoding": "utf-8"};
+</script>
+
+<script src="./tugasPD1(pengertian)_files/encoding.js.download" charset="utf-8"></script>
+
+<script src="./tugasPD1(pengertian)_files/main.min.js.download" type="text/javascript" charset="utf-8"></script>
+
+
+
+<script type="text/javascript">
+  function _remove_token_from_url() {
+    if (window.location.search.length <= 1) {
+      return;
+    }
+    var search_parameters = window.location.search.slice(1).split('&');
+    for (var i = 0; i < search_parameters.length; i++) {
+      if (search_parameters[i].split('=')[0] === 'token') {
+        // remote token from search parameters
+        search_parameters.splice(i, 1);
+        var new_search = '';
+        if (search_parameters.length) {
+          new_search = '?' + search_parameters.join('&');
+        }
+        var new_url = window.location.origin + 
+                      window.location.pathname + 
+                      new_search + 
+                      window.location.hash;
+        window.history.replaceState({}, "", new_url);
+        return;
+      }
+    }
+  }
+  _remove_token_from_url();
+</script>
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; min-width: 0px; max-width: none; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: STIXMathJax_Symbols, sans-serif;"></div></div></body></html>
